@@ -10,6 +10,7 @@ namespace WebApplication1.Controllers
 {
     public class MoviesController : Controller
     {
+        
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -19,13 +20,12 @@ namespace WebApplication1.Controllers
 
 
         }
-        public ActionResult Index(int ? pageindex,string sortby)
+        public ActionResult Index()
         {
-            if (!pageindex.HasValue)
-                pageindex = 1;
-            if (string.IsNullOrWhiteSpace(sortby))
-                sortby = "name";
-            return Content(string.Format("pageidex={0}&sortby={1}",pageindex,sortby));
+           
+            return View();
+
+
         }
 
         public ActionResult Byreleasedate(int month,int year)
